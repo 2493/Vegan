@@ -2,7 +2,9 @@
 <html>
 <head>
 	<title>Vegan</title>
+	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="sortcut icon" href="logo.png" type="image/gif" />
 	<meta charset="UTF-8">
 </head>
 <body>
@@ -22,8 +24,53 @@
 </div>	
 
 <div class="principal">
-	<h1>Vegan</h1>
-	<img src="logoProvisorio.jpg">
+	<h1>Vegan <img src="logo.png"></h1>
+
+	<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="julia.jpg" style="width:40%">
+</div>
+
+<div class="mySlides fade">
+  <img src="pedro.jpg" style="width:40%">
+</div>
+
+<div class="mySlides fade">
+  <img src="luana.jpg" style="width:40%">
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
 	<p>A empresa Vegan, por meio de uma plataforma digital, traz um novo conceito de nutrição vegana Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
