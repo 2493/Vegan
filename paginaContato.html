@@ -12,40 +12,38 @@
 <div class="tudo">
 
 <div class="menu">
-    <a href="inicio.html"><span class="menuSpan">Início</span></a>
+    <a href="index.html"><span class="menuSpan">Início</span></a>
     <span class="menuSpan">|</span>
-    <a href="miniblog.html"><span class="menuSpan">Mini Blog</span></a> 
+    <a href="paginaMiniBlog.html"><span class="menuSpan">Mini Blog</span></a> 
     <span class="menuSpan">|</span>
-    <a href="sobrenos.html"><span class="menuSpan">Sobre Nós</span></a>
+    <a href="paginaSobreNos.html"><span class="menuSpan">Sobre Nós</span></a>
     <span class="menuSpan">|</span>  
-    <a href="contato.html"><span class="menuSpan">Contato</span></a>  
-    <a href="login.html"><span class="menuSpan" id="arealogin">Login</span></a> 
+    <a href="paginaContato.html"><span class="menuSpan">Contato</span></a>  
+    <span class="menuSpan">|</span>  
+    <a href="paginaLogin.php"><span class="menuSpan">Login</span></a> 
 
 </div>  
 
-<div class="contato">
+<div class="areaCadastro">
 	<h1>Contato</h1>
+    
+    <div class='cadastroBordas'>
+    <form action='paginaContato.php' method='POST'>
+    <label>Nome:</label><br> 
+    <input type='Text' name='nome'><br>
 
-    <h2>
-    <p>Nome:</p>
-            <input id="nome" placeholder="Tiago Vale" required="required" name="nome" />
-    </h2>
-    <h2>
-    <p>Fone:</p>
-            <input id="foneid" placeholder="(xx)xx-xx-xx-xx" name="fone" />
-    </h2>
-    <h2>
-    <p>Email:</p>
-            <input id="email" placeholder="fulano@mail.com" name="email" />
-    </h2>
-    <h2>
-    <p>Comentário:</p>
-            <textarea id="comentario" placeholder="Deixe sua opinião"></textarea>
-    </h2>
-    <h2>
-           <a href="contato.html"><img src="ok.png"></a>
-    </h2>
-	
+    <label>Fone:</label><br> 
+    <input type='Text' name='fone'><br>
+
+    <label>Email:</label><br> 
+    <input type='Text' name='email'><br>
+
+     <label>Mensagem:</label><br> 
+    <input type='Text' name='mensagem'><br>
+
+    <input id='enviar' type='submit' value='Enviar'>
+    </form>
+	</div>
 </div>
 	
 <div class="rodape">
