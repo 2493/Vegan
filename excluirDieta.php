@@ -1,5 +1,11 @@
+<?php 
+include 'banco.php';
+$id = $_POST['id'];
 
-<!DOCTYPE html>
+$sql = "DELETE FROM `dietas` WHERE id = '".$id."'";
+$result = mysqli_query($link, $sql);
+
+echo '<!DOCTYPE html>
 <html>
 <head>
 	<title>Vegan</title>
@@ -21,39 +27,29 @@
     <span class="menuSpan">|</span>  
     <a href="paginaContato.php"><span class="menuSpan">Contato</span></a>  
     <span class="menuSpan">|</span>  
-    <a href="paginaLogin.php"><span class="menuSpan">Login <img id='marcadorMenu' src='logo.png'></span></a> 
-
+    <a href="paginaLogin.php"><span class="menuSpan">Login <img id="marcadorMenu" src="logo.png"></span></a> 
 </div>	
+';
 
-<div class="areaLogin">
+echo "<div class = 'visualizarDieta'>
+<h2>Dieta Excluída!<h2>
+";
 
-<form method="post" action="areaLogin.php" id="formlogin" name="formlogin" >
-<h1>Login</h1><br>
-<div class="loginBordas">
-<label>NOME: </label><br>
-<input type="text" name="login" id="login"><br>
-<label>SENHA:</label><br> 
-<input type="password" name="senha" id="senha"><br>
-<input id="logar" type="submit" value="LOGAR"><br>
-</form>
-</div>
 
-<div class="loginBordas">	
-	<h2>ou cadastre-se:</h2>
-<form method="post" action="cadastroUsuario.php" id="formCadastroLogin" name="formCadastroLogin" >
-<input id="logar" type="submit" value="CADASTRO"  />
-</form>
-</div>
+        echo " <a href='visualizarTodasDietas.php'><span id='botaoVoltarUsuario'>Voltar</span></a> ";
+ 
 
-</div>
-	
-<div class="rodape">
+echo "</div>";
+
+
+echo '<div class="rodape">
 	<a href="http://facebook.com/" target="_blank"><span class="rodapeItem">SIGA-NOS NO FACEBOOK<img id="iconeRodape" src="fbicon.jpg"></span></a>  
     <a href="http://twitter.com/" target="_blank"><span class="rodapeItem">SIGA-NOS NO TWITTER<img id="iconeRodape2" src="tticon.png"></span></a> 
 </div>
 
+
 </div>
 
 </body>
-</html>
-
+</html>';
+ ?>

@@ -16,15 +16,15 @@ include 'banco.php';
 <div class="tudo">
 
 <div class="menu">
-	<a href="index.html"><span class="menuSpan">Início</span></a>
+	<a href="index.php"><span class="menuSpan">Início</span></a>
 	<span class="menuSpan">|</span>
-	<a href="paginaMiniBlog.html"><span class="menuSpan">Mini Blog</span></a> 
+	<a href="paginaMiniBlog.php"><span class="menuSpan">Mini Blog</span></a> 
 	<span class="menuSpan">|</span>
-    <a href="paginaSobreNos.html"><span class="menuSpan">Sobre Nós</span></a>
+    <a href="paginaSobreNos.php"><span class="menuSpan">Sobre Nós</span></a>
     <span class="menuSpan">|</span>  
-    <a href="paginaContato.html"><span class="menuSpan">Contato</span></a>  
+    <a href="paginaContato.php"><span class="menuSpan">Contato</span></a>  
     <span class="menuSpan">|</span>  
-    <a href="paginaLogin.php"><span class="menuSpan">Login</span></a> 
+    <a href="paginaLogin.php"><span class="menuSpan">Login <img id='marcadorMenu' src='logo.png'></span></a> 
 </div>	
 
 <div class="areaCadastro">
@@ -84,9 +84,10 @@ else{
 
 
  <div class="rodape">
-	<a href="http://facebook.com/" target="_blank"><span class="rodapeItem">SIGA-NOS NO FACEBOOK</span></a>  
-    <a href="http://twitter.com/" target="_blank"><span class="rodapeItem">SIGA-NOS NO TWITTER</span></a> 
+	<a href="http://facebook.com/" target="_blank"><span class="rodapeItem">SIGA-NOS NO FACEBOOK<img id="iconeRodape" src="fbicon.jpg"></span></a>  
+    <a href="http://twitter.com/" target="_blank"><span class="rodapeItem">SIGA-NOS NO TWITTER<img id="iconeRodape2" src="tticon.png"></span></a> 
 </div>
+
 
 </div>
 

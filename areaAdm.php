@@ -26,15 +26,15 @@ $logado = $_SESSION['login'];
 <div class='tudo'>
 
 <div class='menu'>
-	<a href='index.html'><span class='menuSpan'>Início</span></a>
+	<a href='index.php'><span class='menuSpan'>Início</span></a>
 	<span class='menuSpan'>|</span>
-	<a href='paginaMiniBlog.html'><span class='menuSpan'>Mini Blog</span></a> 
+	<a href='paginaMiniBlog.php'><span class='menuSpan'>Mini Blog</span></a> 
 	<span class='menuSpan'>|</span>
-    <a href='paginaSobreNos.html'><span class='menuSpan'>Sobre Nós</span></a>
+    <a href='paginaSobreNos.php'><span class='menuSpan'>Sobre Nós</span></a>
     <span class='menuSpan'>|</span>  
-    <a href='paginaContato.html'><span class='menuSpan'>Contato</span></a>  
+    <a href='paginaContato.php'><span class='menuSpan'>Contato</span></a>  
     <span class='menuSpan'>|</span>  
-    <a href='destroySession.php'><span class='menuSpan'><?php echo "Deslogar (".$logado.")"; ?></span></a> 
+    <a href='destroySession.php'><span class='menuSpan'><?php echo "Deslogar (".$logado.") "; ?> <img id='marcadorMenu' src='logo.png'></span></a> 
 
 </div>	
 
@@ -43,15 +43,20 @@ $logado = $_SESSION['login'];
 echo "<h1>Olá ".$logado."</h1>";
  ?>
 	<div class="loginBordas">
+	 <a href='paginaContato.php'><span id='botoesAreaAdm'>Enviar mensagens para usuários</span></a> <br>	
+	 <a href='visualizarMensagens.php'><span id='botoesAreaAdm'>Visualizar mensagens de usuários</span></a> <br><br>	
 	 <a href='cadastroDieta.php'><span id='botoesAreaAdm'>Inserir Dieta para Cliente</span></a> <br>
-	 <a href='edicaoDieta.php'><span id='botoesAreaAdm'>Editar Dieta de Cliente</span></a>
+	 
+	 <a href='visualizarTodasDietas.php'><span id='botoesAreaAdm'>Vizualizar Dietas de Clientes</span></a>
+
 	 </div>
 </div>
 	
-<div class='rodape'>
-	<a href="http://facebook.com/" "target= _blank"><span class="rodapeItem">SIGA-NOS NO FACEBOOK</span></a>  
-    <a href='http://twitter.com/'' target= _blank'><span class='rodapeItem'>SIGA-NOS NO TWITTER</span></a> 
+<div class="rodape">
+	<a href="http://facebook.com/" target="_blank"><span class="rodapeItem">SIGA-NOS NO FACEBOOK<img id="iconeRodape" src="fbicon.jpg"></span></a>  
+    <a href="http://twitter.com/" target="_blank"><span class="rodapeItem">SIGA-NOS NO TWITTER<img id="iconeRodape2" src="tticon.png"></span></a> 
 </div>
+
 
 </div>
 

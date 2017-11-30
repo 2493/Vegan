@@ -119,6 +119,11 @@ a:hover {
 	font-size: 30px;
 }
 
+.miniBlog h1{
+	font-size: 100px;
+	text-align: center;
+}
+
 .contato{
 	background-color: rgba(255, 255, 255, 0.9);
 	margin-top: 1%;
@@ -296,7 +301,7 @@ a:hover {
 }
 
 .visualizarDieta table{
-	width: 70%
+	width: 70%;
 }
 
 .visualizarDieta h1{
@@ -337,3 +342,27 @@ a:hover {
 	margin-bottom: 5%;
 }
 
+#botaoVoltarUsuario{
+	font-weight: bold;
+	font-size: 20px;
+	margin-left: 40%;
+}
+
+#tabelaDietas{
+	margin-bottom: 100px;
+	margin-top: 100px;
+}
+
+#iconeRodape{
+	width: 2%;
+	margin-left: 0.5%;
+}
+
+#iconeRodape2{
+	width: 3%;
+	margin-left: 0.5%;
+}
+
+#marcadorMenu{
+	width: 1.5%;
+}

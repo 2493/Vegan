@@ -26,15 +26,15 @@ $logado = $_SESSION['login'];
 <div class="tudo">
 
 <div class="menu">
-	<a href="index.html"><span class="menuSpan">Início</span></a>
+	<a href="index.php"><span class="menuSpan">Início</span></a>
 	<span class="menuSpan">|</span>
-	<a href="paginaMiniBlog.html"><span class="menuSpan">Mini Blog</span></a> 
+	<a href="paginaMiniBlog.php"><span class="menuSpan">Mini Blog</span></a> 
 	<span class="menuSpan">|</span>
-    <a href="paginaSobreNos.html"><span class="menuSpan">Sobre Nós</span></a>
+    <a href="paginaSobreNos.php"><span class="menuSpan">Sobre Nós</span></a>
     <span class="menuSpan">|</span>  
-    <a href="paginaContato.html"><span class="menuSpan">Contato</span></a>  
+    <a href="paginaContato.php"><span class="menuSpan">Contato</span></a>  
     <span class="menuSpan">|</span>  
-    <a href="destroySession.php"><span class="menuSpan"><?php echo "Deslogar (".$logado.")"; ?></span></a> 
+    <a href="destroySession.php"><span class="menuSpan"><?php echo "Deslogar (".$logado.") "; ?> <img id='marcadorMenu' src='logo.png'></span></a> 
 </div>	
 
 <?php 
@@ -45,6 +45,8 @@ echo "<h2 id='obsCadastro'>(Utilizar o login do seu cliente no campo usuário, p
 echo"<form action = 'cadastroDieta.php' method='POST'>";
 echo "<label>Identificação da dieta (número):</label> <br>
 <input type='Text' name ='id'><br>";
+echo "<label>Autor da dieta:</label><br>
+<input type='Text' name ='autor' value = '".$logado."'><br>";
 echo "<label>Usuário que receberá a dieta:</label><br>
 <input type='Text' name ='usuario'><br>";
 echo "<label>Dia da Semana:</label><br>
@@ -67,6 +69,10 @@ echo "<label>Observações:</label><br>
 <input type='Text' name ='observacao'><br>";
 echo "<input type='submit' value ='Enviar'><br>";
 echo "</form>";
+echo "<form action='areaAdm.php' method='POST'>";
+		echo "<br>";
+		echo "<input type='submit' value='Voltar'>";
+		echo "</form>";
 echo "</div>";
 }
 else{
@@ -81,10 +87,11 @@ $cafet = $_POST['cafet'];
 $janta = $_POST['janta'];
 $ceia = $_POST['ceia'];
 $observacao = $_POST['observacao'];
+$autor = $_POST['autor'];
 
 
-if($id != "" && $usuario != "" && $dia != "" && $cafem != "" && $lanchem != "" && $almoco != "" && $lanchet != "" && $cafet != "" && $janta != "" && $ceia != ""){
-$sql = "insert INTO dietas (id, usuario, dia, cafem, lanchem, almoco, lanchet, cafet, janta, ceia, observacao) VALUES ('".$id."', '".$usuario."', '".$dia."', '".$cafem."', '".$lanchem."', '".$almoco."', '".$lanchet."', '".$cafet."', '".$janta."', '".$ceia."', '".$observacao."')";
+if($id != "" && $usuario != "" && $dia != "" && $cafem != "" && $lanchem != "" && $almoco != "" && $lanchet != "" && $cafet != "" && $janta != "" && $ceia != ""  && $autor != ""){
+$sql = "insert INTO dietas (id, usuario, dia, cafem, lanchem, almoco, lanchet, cafet, janta, ceia, observacao, autor) VALUES ('".$id."', '".$usuario."', '".$dia."', '".$cafem."', '".$lanchem."', '".$almoco."', '".$lanchet."', '".$cafet."', '".$janta."', '".$ceia."', '".$observacao."', '".$autor."')";
 
 $result = mysqli_query($link, $sql);
 
@@ -126,9 +133,10 @@ if($result){
  ?>
 
  <div class="rodape">
-	<a href="http://facebook.com/" target="_blank"><span class="rodapeItem">SIGA-NOS NO FACEBOOK</span></a>  
-    <a href="http://twitter.com/" target="_blank"><span class="rodapeItem">SIGA-NOS NO TWITTER</span></a> 
+	<a href="http://facebook.com/" target="_blank"><span class="rodapeItem">SIGA-NOS NO FACEBOOK<img id="iconeRodape" src="fbicon.jpg"></span></a>  
+    <a href="http://twitter.com/" target="_blank"><span class="rodapeItem">SIGA-NOS NO TWITTER<img id="iconeRodape2" src="tticon.png"></span></a> 
 </div>
+
 
 </div>
 

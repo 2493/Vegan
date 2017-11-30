@@ -12,13 +12,8 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tru
 
 $logado = $_SESSION['login'];
 
-$diasemana = array('Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado');
-$data = date('Y-m-d');
-$diasemana_numero = date('w', strtotime($data));
-$diaDieta = $diasemana[$diasemana_numero];
 
-
-$sql = "SELECT * FROM `dietas` WHERE dia='".$diaDieta."' and usuario='".$logado."'";
+$sql = "SELECT * FROM `contato` WHERE destinatario='".$logado."'";
 $result = mysqli_query($link, $sql);
 
 ?>
@@ -51,30 +46,35 @@ $result = mysqli_query($link, $sql);
 
 <?php
 echo "<div class = 'visualizarDieta'>"; 
-echo "<h1>Dieta de ".$diaDieta." abaixo: </h1>";
-echo "<h2>Bom Apetite ".$logado."!</h2>";
+echo "<h1>Mensagens Abaixo: </h1>";
 
 
 while($row = mysqli_fetch_array($result, MYSQLI_NUM)){
 
-	echo "<table border='1px' cellpadding='5px' cellspacing='0'>";
-	echo "<tr id = 'difTabelaDietas'> <td id = 'tituloTabelaDietas'> Café da Manhã:</td> <td> $row[3]</td> </tr>";
-	echo "<tr> <td id = 'tituloTabelaDietas'> Lanche da Manhã:</td> <td> $row[4]</td> </tr>";
-	echo "<tr id = 'difTabelaDietas'> <td id = 'tituloTabelaDietas'> Almoço:</td> <td> $row[5]</td> </tr>";
-	echo "<tr> <td id = 'tituloTabelaDietas'> Lanche da Tarde:</td> <td> $row[6]</td> </tr>";
-	echo "<tr id = 'difTabelaDietas'> <td id = 'tituloTabelaDietas'> Café da Tarde:</td> <td> $row[7]</td> </tr>";
-	echo "<tr> <td id = 'tituloTabelaDietas'> Janta:</td> <td> $row[8]</td> </tr>";
-	echo "<tr id = 'difTabelaDietas'> <td id = 'tituloTabelaDietas'> Ceia:</td> <td> $row[9]</td> </tr>";
+
+	echo '<table id = "tabelaDietas" border="1px" cellpadding="5px" cellspacing="0">';
+  echo "<form action='excluirMensagem.php' method='POST'>";
+  echo "<tr id = 'difTabelaDietas'> <td id = 'tituloTabelaDietas'> Identificação:</td> <td><input type='Text' name='id' value='$row[3]'></td> </tr>";
+  echo "<tr> <td id = 'tituloTabelaDietas'> Remetente:</td> <td> $row[0]</td> </tr>";
+	echo "<tr id = 'difTabelaDietas'> <td id = 'tituloTabelaDietas'> Mensagem:</td> <td> $row[2] </td> <td><input type='submit' value ='Excluir Mensagem'></form></td></tr>";
     echo "</table>";
 
-    echo "<h3>Observações: ".$row[10]."</h3>";   
 
   
 }  
 
+if ($logado == "adm1" || $logado == "adm2" || $logado == "adm3"){
+        echo "<a href='areaAdm.php'><span id='botaoVoltarUsuario'>Voltar</span></a> ";
+    }
+    elseif ($logado == true) {
+        echo "<a href='areaUsuario.php'><span id='botaoVoltarUsuario'>Voltar</span></a>";
+    }
+    else{
+        echo"<a href='paginaLogin.php'><span id='botaoVoltarUsuario'>Voltar</span></a>";
 
+    }
 ?>
-   <a href='areaUsuario.php'><span id='botaoVoltarUsuario'>Voltar</span></a> 
+   
 
 </div>
 
